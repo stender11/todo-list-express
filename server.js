@@ -50,8 +50,8 @@ app.put('/markComplete', (request, response) => {
             completed: true
           }
     },{
-        sort: {_id: -1},
-        upsert: false
+        sort: {_id: -1}, // if there are multiple instances of a document, -1 will pick the first in descending order (1 will pick first in ascending order)
+        upsert: false    // if item doesn't exist, "upsert: true" will create it and false does not create anything
     })
     .then(result => {
         console.log('Marked Complete')
