@@ -14,7 +14,8 @@ Array.from(itemCompleted).forEach((element)=>{
     element.addEventListener('click', markUnComplete)
 })
 
-async function deleteItem(){
+async function deleteItem(){            // try changing funcion to hide item from dom, but keep it stores in the database
+                                        // document.getElementById("myP").style.visibility = "hidden";
     const itemText = this.parentNode.childNodes[1].innerText
     try{
         const response = await fetch('deleteItem', {
